@@ -1,0 +1,169 @@
+.ContenedorLogin {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	min-height: 100vh;
+	background: #f4efdf;
+	color: #263c2e;
+}
+
+.ContenedorLogin__Imagen {
+	position: relative;
+	min-height: 100vh;
+	overflow: hidden;
+	background: #314d37;
+}
+
+.ContenedorLogin__Imagen::after {
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(180deg, transparent 35%, rgb(20 39 26 / 78%) 100%);
+	content: '';
+}
+
+.ContenedorLogin__Imagen img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	inset: 0;
+	object-fit: cover;
+}
+
+
+.ContenedorLogin__Formulario {
+	display: grid;
+	min-width: 0;
+	padding: 3rem;
+	place-items: center;
+	background-color: #f4efdf;
+	background-image: radial-gradient(#71866a 0.65px, transparent 0.65px);
+	background-size: 18px 18px;
+}
+
+.FormularioLogin {
+	width: min(100%, 26rem);
+	padding: clamp(1.75rem, 4vw, 3.5rem);
+	border: 1px solid rgb(49 77 55 / 14%);
+	border-radius: 6px;
+	background: #fbf8ee;
+	box-shadow: 0 18px 50px rgb(43 57 39 / 9%);
+}
+
+.FormularioLogin__Logo {
+	display: block;
+	width: 6.5rem;
+	height: 6.5rem;
+	margin: 0 auto 1.5rem;
+	border-radius: 50%;
+	object-fit: cover;
+}
+
+.FormularioLogin__Encabezado {
+	margin-bottom: 2.25rem;
+}
+
+.FormularioLogin__Etiqueta {
+	color: #66805d;
+}
+
+.FormularioLogin__Encabezado h2 {
+	margin: 0.65rem 0 0.5rem;
+	font-family: Georgia, 'Times New Roman', serif;
+	font-size: 2.5rem;
+	font-weight: 400;
+	line-height: 1.1;
+}
+
+.FormularioLogin__Encabezado p {
+	margin: 0;
+	color: #697267;
+	font-size: 0.95rem;
+}
+
+.FormularioLogin__Campo {
+	display: grid;
+	gap: 0.55rem;
+	margin-bottom: 1.35rem;
+}
+
+.FormularioLogin__Campo label {
+	font-size: 0.88rem;
+	font-weight: 650;
+}
+
+.FormularioLogin__Campo input {
+	width: 100%;
+	min-height: 3.25rem;
+	padding: 0.8rem 0.95rem;
+	border: 1px solid #c9cdbb;
+	border-radius: 4px;
+	outline: none;
+	background: #fffdf7;
+	color: #263c2e;
+	font: inherit;
+	transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.FormularioLogin__Campo input::placeholder {
+	color: #92988b;
+}
+
+.FormularioLogin__Campo input:focus-visible {
+	border-color: #456b4c;
+	box-shadow: 0 0 0 3px rgb(69 107 76 / 17%);
+}
+
+.FormularioLogin__Boton {
+	width: 100%;
+	min-height: 3.25rem;
+	margin-top: 0.5rem;
+	border: 0;
+	border-radius: 4px;
+	background: #365a3d;
+	color: #fffdf5;
+	cursor: pointer;
+	font: inherit;
+	font-weight: 700;
+	transition: background-color 160ms ease, transform 160ms ease;
+}
+
+.FormularioLogin__Boton:hover {
+	transform: translateY(-1px);
+	background: #294a31;
+}
+
+.FormularioLogin__Boton:focus-visible {
+	outline: 3px solid #8da47f;
+	outline-offset: 3px;
+}
+
+@media (max-width: 760px) {
+	.ContenedorLogin {
+		grid-template-columns: 1fr;
+		grid-template-rows: minmax(15rem, 34vh) 1fr;
+	}
+
+	.ContenedorLogin__Imagen {
+		min-height: 15rem;
+	}
+
+	.ContenedorLogin__Mensaje {
+		right: 1.5rem;
+		bottom: 1.5rem;
+		left: 1.5rem;
+	}
+
+	.ContenedorLogin__Mensaje h1 {
+		max-width: 20ch;
+		margin: 0.55rem 0 0.4rem;
+		font-size: clamp(1.8rem, 7vw, 2.5rem);
+	}
+
+	.ContenedorLogin__Formulario {
+		padding: 2rem 1rem;
+	}
+
+	.FormularioLogin {
+		padding: 1.75rem;
+	}
+}

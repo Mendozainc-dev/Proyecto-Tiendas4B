@@ -1,0 +1,651 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+}
+
+button,
+input,
+select,
+textarea {
+	font: inherit;
+}
+
+.HomeApp {
+	--pine: #244832;
+	--pine-dark: #183725;
+	--leaf: #597a50;
+	--paper: #f0ecdf;
+	--panel: #faf8ef;
+	--ink: #28372e;
+	--muted: #778075;
+	--line: #d7d5c5;
+	--signal: #d5a539;
+	min-height: 100vh;
+	padding-bottom: 74px;
+	background: var(--paper);
+	color: var(--ink);
+	font-family: 'Trebuchet MS', 'Segoe UI', sans-serif;
+}
+
+.AdminHeader {
+	position: relative;
+	z-index: 2;
+	background: var(--pine-dark);
+	color: #f7f4e9;
+}
+
+.AdminHeader__Inner {
+	display: flex;
+	width: min(100% - 3rem, 1440px);
+	min-height: 76px;
+	margin: 0 auto;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.AdminHeader__Brand {
+	display: inline-flex;
+	gap: 0.8rem;
+	align-items: center;
+	color: inherit;
+	text-decoration: none;
+}
+
+.AdminHeader__Mark {
+	display: grid;
+	width: 42px;
+	height: 42px;
+	place-items: center;
+	background: #d5a539;
+	color: var(--pine-dark);
+	font-family: Georgia, 'Times New Roman', serif;
+	font-size: 1.25rem;
+	font-weight: 700;
+}
+
+.AdminHeader__BrandText {
+	display: grid;
+	gap: 0.16rem;
+}
+
+.AdminHeader__BrandText strong {
+	font-size: 0.91rem;
+	letter-spacing: 0.08em;
+}
+
+.AdminHeader__BrandText small,
+.AdminHeader__SessionName small {
+	color: #b8c2b1;
+	font-size: 0.63rem;
+	font-weight: 700;
+	letter-spacing: 0.12em;
+}
+
+.AdminHeader__Session {
+	display: flex;
+	gap: 0.8rem;
+	align-items: center;
+}
+
+.AdminHeader__SessionDot {
+	width: 8px;
+	height: 8px;
+	background: #d5a539;
+}
+
+.AdminHeader__SessionName {
+	display: grid;
+	gap: 0.18rem;
+	font-size: 0.82rem;
+}
+
+.AdminHeader__Logout {
+	min-height: 38px;
+	margin-left: 1rem;
+	padding: 0 0.95rem;
+	border: 1px solid #718272;
+	background: transparent;
+	color: #f7f4e9;
+	cursor: pointer;
+	font-size: 0.78rem;
+}
+
+.AdminHeader__Logout:hover,
+.AdminHeader__Logout:focus-visible {
+	border-color: #d5a539;
+	outline: none;
+	color: #e4c46f;
+}
+
+.HomeMain {
+	width: min(100% - 3rem, 1440px);
+	margin: 0 auto;
+	padding: 2.5rem 0 3rem;
+}
+
+.HomeIntro {
+	display: flex;
+	min-height: 120px;
+	align-items: flex-start;
+	justify-content: space-between;
+}
+
+.HomeIntro__Eyebrow,
+.HomeIntro__Stamp span,
+.HomeMetric > span,
+.HomeMetrics__Caption,
+.AdminPanelHeading__Index {
+	margin: 0;
+	color: var(--leaf);
+	font-size: 0.65rem;
+	font-weight: 700;
+	letter-spacing: 0.12em;
+}
+
+.HomeIntro__Eyebrow span {
+	padding: 0 0.35rem;
+	color: var(--signal);
+}
+
+.HomeIntro h1 {
+	margin: 0.55rem 0 0.35rem;
+	font-family: Georgia, 'Times New Roman', serif;
+	font-size: clamp(2rem, 4vw, 3.1rem);
+	font-weight: 400;
+	line-height: 1.05;
+}
+
+.HomeIntro__Description {
+	margin: 0;
+	color: #6c756b;
+	font-size: 0.9rem;
+}
+
+.HomeIntro__Stamp {
+	display: grid;
+	gap: 0.35rem;
+	margin-top: 0.45rem;
+	padding: 0.65rem 0 0.65rem 1rem;
+	border-left: 2px solid var(--signal);
+}
+
+.HomeIntro__Stamp strong {
+	font-size: 0.78rem;
+	letter-spacing: 0.05em;
+}
+
+.HomeMetrics {
+	position: relative;
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr)) auto;
+	margin: 0 0 2rem;
+	border-top: 1px solid var(--line);
+	border-bottom: 1px solid var(--line);
+}
+
+.HomeMetric {
+	display: grid;
+	min-height: 86px;
+	padding: 1rem 1.25rem 0.85rem 0;
+	align-content: space-between;
+	border-right: 1px solid var(--line);
+}
+
+.HomeMetric + .HomeMetric {
+	padding-left: 1.25rem;
+}
+
+.HomeMetric > span {
+	color: #73796c;
+	font-size: 0.6rem;
+}
+
+.HomeMetric strong {
+	font-family: Georgia, 'Times New Roman', serif;
+	font-size: 1.6rem;
+	font-weight: 400;
+}
+
+.HomeMetric--alert strong {
+	color: #a4751c;
+}
+
+.HomeMetrics__Caption {
+	display: flex;
+	padding-left: 1.5rem;
+	align-items: center;
+	color: #828779;
+	font-size: 0.58rem;
+}
+
+.HomeMetrics__Caption span {
+	padding: 0 0.4rem;
+	color: var(--signal);
+}
+
+.AdminWorkspace {
+	display: grid;
+	grid-template-columns: minmax(260px, 0.78fr) minmax(0, 1.8fr);
+	gap: 1.25rem;
+	align-items: start;
+}
+
+.AdminFormPanel,
+.AdminDataPanel {
+	min-width: 0;
+	border-top: 3px solid var(--pine);
+	background: var(--panel);
+}
+
+.AdminFormPanel {
+	padding: 1.35rem 1.4rem 1rem;
+}
+
+.AdminPanelHeading {
+	margin-bottom: 1.35rem;
+}
+
+.AdminPanelHeading h2 {
+	margin: 0.45rem 0 0;
+	font-family: Georgia, 'Times New Roman', serif;
+	font-size: 1.55rem;
+	font-weight: 400;
+}
+
+.AdminPanelHeading__Index {
+	font-size: 0.59rem;
+}
+
+.AdminForm {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 0.95rem 0.75rem;
+}
+
+.AdminForm__Field {
+	display: grid;
+	min-width: 0;
+	gap: 0.4rem;
+	align-content: start;
+}
+
+.AdminForm__Field.is-wide {
+	grid-column: 1 / -1;
+}
+
+.AdminForm__Field > span {
+	color: #4f5a4e;
+	font-size: 0.72rem;
+	font-weight: 700;
+}
+
+.AdminForm__Field input,
+.AdminForm__Field select,
+.AdminForm__Field textarea,
+.AdminSearch input {
+	width: 100%;
+	min-width: 0;
+	min-height: 40px;
+	padding: 0.6rem 0.65rem;
+	border: 1px solid #cccbbb;
+	border-radius: 0;
+	outline: none;
+	background: #fffdf7;
+	color: var(--ink);
+	font-size: 0.78rem;
+}
+
+.AdminForm__Field textarea {
+	min-height: 78px;
+	resize: vertical;
+}
+
+.AdminForm__Field input:focus,
+.AdminForm__Field select:focus,
+.AdminForm__Field textarea:focus,
+.AdminSearch input:focus {
+	border-color: var(--leaf);
+	box-shadow: 0 0 0 2px rgb(89 122 80 / 13%);
+}
+
+.AdminForm__Actions {
+	display: flex;
+	grid-column: 1 / -1;
+	gap: 0.6rem;
+	margin-top: 0.2rem;
+}
+
+.AdminButton {
+	min-height: 42px;
+	padding: 0 0.9rem;
+	border: 1px solid transparent;
+	border-radius: 0;
+	cursor: pointer;
+	font-size: 0.75rem;
+	font-weight: 700;
+}
+
+.AdminButton--primary {
+	flex: 1;
+	background: var(--pine);
+	color: #fffdf4;
+}
+
+.AdminButton--primary:hover {
+	background: var(--pine-dark);
+}
+
+.AdminButton--quiet {
+	border-color: var(--line);
+	background: transparent;
+	color: var(--ink);
+}
+
+.AdminForm__Note {
+	grid-column: 1 / -1;
+	margin: -0.1rem 0 0;
+	color: #7c8378;
+	font-size: 0.65rem;
+}
+
+.AdminDataPanel {
+	padding: 1.35rem 1.4rem 0;
+}
+
+.AdminPanelHeading--table {
+	display: flex;
+	margin-bottom: 1rem;
+	align-items: end;
+	justify-content: space-between;
+	gap: 1rem;
+}
+
+.AdminSearch {
+	width: min(220px, 48%);
+}
+
+.AdminSearch input {
+	min-height: 36px;
+	padding: 0.45rem 0.6rem;
+	font-size: 0.72rem;
+}
+
+.AdminTable__Scroll {
+	width: 100%;
+	overflow-x: auto;
+}
+
+.AdminTable {
+	width: 100%;
+	border-collapse: collapse;
+	text-align: left;
+}
+
+.AdminTable th {
+	padding: 0.7rem 0.65rem;
+	border-top: 1px solid var(--line);
+	border-bottom: 1px solid #c9c9b8;
+	background: #f0eddf;
+	color: #65705f;
+	font-size: 0.61rem;
+	font-weight: 700;
+	letter-spacing: 0.06em;
+	white-space: nowrap;
+}
+
+.AdminTable td {
+	max-width: 260px;
+	padding: 0.75rem 0.65rem;
+	border-bottom: 1px solid #e4e1d5;
+	font-size: 0.72rem;
+	line-height: 1.4;
+	vertical-align: middle;
+}
+
+.AdminTable tbody tr:hover {
+	background: #f4f1e6;
+}
+
+.AdminTable__Actions {
+	white-space: nowrap;
+}
+
+.AdminTable__Actions button {
+	padding: 0.25rem 0.35rem;
+	border: 0;
+	border-bottom: 1px solid transparent;
+	background: transparent;
+	color: var(--pine);
+	cursor: pointer;
+	font-size: 0.68rem;
+}
+
+.AdminTable__Actions button:hover {
+	border-bottom-color: var(--signal);
+}
+
+.AdminTable__Actions button + button {
+	margin-left: 0.25rem;
+	color: #9a5340;
+}
+
+.AdminTable__Empty {
+	padding: 2.5rem 1rem !important;
+	color: var(--muted);
+	text-align: center;
+}
+
+.AdminDataPanel__Foot {
+	display: flex;
+	min-height: 42px;
+	align-items: center;
+	justify-content: space-between;
+	color: #778075;
+	font-size: 0.65rem;
+}
+
+.AdminDataPanel__Foot span:last-child {
+	color: #a27a26;
+	font-size: 0.57rem;
+	font-weight: 700;
+	letter-spacing: 0.1em;
+}
+
+.AdminNavigation {
+	position: fixed;
+	z-index: 5;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	border-top: 1px solid #c5c6b7;
+	background: #e8e4d6;
+}
+
+.AdminNavigation__Inner {
+	display: flex;
+	width: min(100%, 1440px);
+	min-height: 64px;
+	margin: 0 auto;
+	padding: 0 1rem;
+	gap: 0.15rem;
+	align-items: stretch;
+	overflow-x: auto;
+	scrollbar-width: thin;
+}
+
+.AdminNavigation__Link {
+	position: relative;
+	flex: 0 0 auto;
+	min-width: 90px;
+	padding: 0 1rem;
+	border: 0;
+	background: transparent;
+	color: #596357;
+	cursor: pointer;
+	font-size: 0.68rem;
+	font-weight: 700;
+}
+
+.AdminNavigation__Link:hover {
+	background: #dedfcf;
+	color: var(--pine-dark);
+}
+
+.AdminNavigation__Link.is-active {
+	background: var(--pine);
+	color: #fffdf4;
+}
+
+.visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
+}
+
+@media (max-width: 900px) {
+	.HomeMain {
+		width: min(100% - 2rem, 700px);
+		padding-top: 1.8rem;
+	}
+
+	.AdminWorkspace {
+		grid-template-columns: 1fr;
+	}
+
+	.HomeMetrics {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+	}
+
+	.HomeMetrics__Caption {
+		display: none;
+	}
+}
+
+@media (max-width: 560px) {
+	.HomeApp {
+		padding-bottom: 66px;
+	}
+
+	.AdminHeader__Inner {
+		width: calc(100% - 1.5rem);
+		min-height: 66px;
+	}
+
+	.AdminHeader__Mark {
+		width: 36px;
+		height: 36px;
+	}
+
+	.AdminHeader__BrandText strong {
+		font-size: 0.78rem;
+	}
+
+	.AdminHeader__BrandText small {
+		font-size: 0.54rem;
+	}
+
+	.AdminHeader__Session {
+		gap: 0.45rem;
+	}
+
+	.AdminHeader__SessionName {
+		font-size: 0.68rem;
+	}
+
+	.AdminHeader__SessionName small {
+		font-size: 0.5rem;
+	}
+
+	.AdminHeader__Logout {
+		min-height: 34px;
+		margin-left: 0.25rem;
+		padding: 0 0.55rem;
+	}
+
+	.HomeMain {
+		width: calc(100% - 1.5rem);
+		padding: 1.45rem 0 1.5rem;
+	}
+
+	.HomeIntro {
+		min-height: 110px;
+	}
+
+	.HomeIntro__Stamp {
+		margin-top: 0.15rem;
+		padding-left: 0.55rem;
+	}
+
+	.HomeIntro__Stamp span {
+		font-size: 0.52rem;
+	}
+
+	.HomeIntro__Stamp strong {
+		font-size: 0.62rem;
+	}
+
+	.HomeIntro__Description {
+		max-width: 260px;
+		font-size: 0.78rem;
+	}
+
+	.HomeMetrics {
+		margin-bottom: 1.1rem;
+	}
+
+	.HomeMetric {
+		min-height: 72px;
+		padding: 0.7rem 0.45rem 0.6rem 0;
+	}
+
+	.HomeMetric + .HomeMetric {
+		padding-left: 0.55rem;
+	}
+
+	.HomeMetric > span {
+		font-size: 0.48rem;
+		line-height: 1.25;
+	}
+
+	.HomeMetric strong {
+		font-size: 1.35rem;
+	}
+
+	.AdminFormPanel,
+	.AdminDataPanel {
+		padding-right: 0.9rem;
+		padding-left: 0.9rem;
+	}
+
+	.AdminPanelHeading--table {
+		align-items: start;
+	}
+
+	.AdminPanelHeading--table .AdminSearch {
+		margin-top: 1rem;
+	}
+
+	.AdminSearch {
+		width: 46%;
+	}
+
+	.AdminNavigation__Inner {
+		min-height: 58px;
+		padding: 0 0.35rem;
+	}
+
+	.AdminNavigation__Link {
+		min-width: 85px;
+		padding: 0 0.8rem;
+		font-size: 0.65rem;
+	}
+}
